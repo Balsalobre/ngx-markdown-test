@@ -1,0 +1,28 @@
+<h2>Test-pipes</h2>
+<br>
+<p>Números en formato ES:</p>
+<p>{{ testNumber | number: '1.1-2':'es' }}</p>
+
+<h3>Pipe simple: (uppercase)</h3>
+<p>{{ lista[0].nombre | uppercase }}</p>
+
+<h3>Pipe normal: (ordenar)</h3>
+<ul>
+    <li *ngFor="let pelicula of lista | sort">
+        Id: {{ pelicula.id }}, Nombre: {{ pelicula.nombre }}, Precio: {{ pelicula.precio }}
+    </li>
+</ul>
+
+<h3>Pipe complejo: (ordenar con parámetros)</h3>
+<ul>
+    <li *ngFor="let pelicula of lista | sortby:true">
+        Id: {{ pelicula.id }}, Nombre: {{ pelicula.nombre }}, Precio: {{pelicula.precio}}
+    </li>
+</ul>
+
+<h3>Pipe normal: (ordenar fechas)</h3>
+<ul>
+    <li *ngFor="let item of dateList | sortDate">
+        {{ item.Key1 }} -- {{ item.CREATE_TS }}
+    </li>
+</ul>
